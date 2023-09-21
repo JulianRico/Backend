@@ -10,6 +10,8 @@ class Promocion(models.Model):
     codigo = models.CharField(max_length=8, unique=True, editable=False)
     fecha_inicial = models.DateTimeField()
     fecha_finalizacion = models.DateTimeField()
+    department = models.CharField(max_length=255, blank=True)
+    city = models.CharField(max_length=255, blank=True)
     
     def __str__(self):
         return self.titulo

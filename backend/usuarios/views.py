@@ -11,6 +11,8 @@ from rest_framework.permissions import IsAuthenticated
 from django.utils import timezone
 from rest_framework.generics import RetrieveUpdateAPIView
 
+
+
 class CreateUserView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
@@ -20,6 +22,7 @@ class CreateUserView(generics.CreateAPIView):
 class TokenRenewView(APIView):    
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
+    
     def post(self, request):
         # Obtener el token actual del usuario autenticado
         
